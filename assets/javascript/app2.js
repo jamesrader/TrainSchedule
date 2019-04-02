@@ -18,13 +18,16 @@ $(document).ready(function () {
             getData(snap);
         });
 
-        //Listener for form button click
+        //Listener for change date button click
         $("#date-check").on("click", function () {
             if ($("#first-date").is(":disabled")) {
                 $("#first-date").prop("disabled", false);
             } else {
                 $("#first-date").prop("disabled", true);
             }
+
+            //Clear a previous submit message
+            $("#submit-message").text("");
 
         });
 
@@ -93,7 +96,7 @@ $(document).ready(function () {
         var trainFreq = $("#frequency").val().trim();
 
         //Data validation would be nice here!!!
-        
+
 
         trainFirstDate = moment(trainFirstDate, "MM/DD/YYYY").format("YYYY-MM-DD");
         var trainFirstUnix = moment(trainFirstDate + "T" + trainFirstTime + ":00").format("X");
