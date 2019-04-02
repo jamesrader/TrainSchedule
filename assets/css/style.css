@@ -1,0 +1,23 @@
+.card {
+    margin-bottom: 40px;
+    padding: 0;
+}
+
+form {
+    margin: 20px;
+}
+
+#submit-button {
+    margin-right: 20px;
+}
+
+.jumbotron{
+    background-image: url("../images/trainbg.jpg");
+    color: #fff;
+}
+
+body {
+    background-image: url("../images/railroadtracksbg.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}

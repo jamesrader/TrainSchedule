@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Train Schedule</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-database.js"></script>
+    <script src="assets/javascript/firebase.js"></script>
+    <script src="assets/javascript/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4">Train Schedule</h1>
+            <p class="lead">Up-to-the-minute train scheduling data!</p>
+        </div>
+        <div class="card">
+            <div class="card-header">Current Train Schedule</div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Train Name</th>
+                        <th scope="col">Destination</th>
+                        <th scope="col">Frequency</th>
+                        <th scope="col">Next Arrival</th>
+                        <th scope="col">Minutes Away</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body"></tbody>
+            </table>
+        </div>
+        <div class="card col-sm-6">
+            <div class="card-header">Add Train</div>
+            <form id="add-form">
+                <div class="form-group">
+                    <label for="train-name">Train Name</label>
+                    <input type="text" class="form-control" id="train-name">
+                </div>
+                <div class="form-group">
+                    <label for="destination">Destination</label>
+                    <input type="text" class="form-control" id="destination">
+                </div>
+                <div class="form-group">
+                    <label for="first-time">First Train Arrival Time (HH:mm - military time)</label>
+                    <input type="text" class="form-control" id="first-time">
+                </div>
+                <div class="form-group">
+                    <label for="first-date">First Train Date (MM/DD/YYYY)</label>
+                    <input type="text" class="form-control" id="first-date" disabled>
+                </div>
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="date-check">
+                    <label class="form-check-label" for="date-check">Click here to edit date (only if there is no arrival today).</label>
+                </div>
+                <div class="form-group">
+                    <label for="frequency">Frequency (minutes)</label>
+                    <input type="number" class="form-control" id="frequency">
+                </div>
+                <button type="submit" class="btn btn-primary" id="submit-button">Submit</button><span
+                    id="submit-message"></span>
+            </form>
+        </div>
+        <div class="col-sm-6"></div>
+    </div>
+
+
+</body>
+
+</html>
